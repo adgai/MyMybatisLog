@@ -1,0 +1,48 @@
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<idea-plugin>
+
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+  <id>org.intellij.sdk.toolWindow</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>MyMybatisLog</name>
+
+  <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
+  <description>
+    <![CDATA[
+      A simple  idea plugin for mybatis When collect sql.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin.</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">MyMybatisLog</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+
+    <toolWindow id="MyMybatisLog" secondary="true" icon="/META-INF/mybatis.png" anchor="bottom"
+                factoryClass="toolWindow.MyMybatisLogWindowFactory"/>
+    
+  
+    <consoleFilterProvider implementation="toolWindow.MyConsoleFilterProvider"/>
+
+<!--    <executor implementation="toolWindow.MyExecutor" id="12121"/>-->
+  </extensions>
+
+<!--    <actions>-->
+<!--        <action id="DAction" class="toolWindow.action.DAction" text="DAction" description="DAction">-->
+<!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
+<!--        </action>-->
+<!--    </actions>-->
+</idea-plugin>
